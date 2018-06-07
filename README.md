@@ -49,19 +49,19 @@ Each task runs the operations ```op()``` of according with below affirmation on 
 ItemState has knowlegment about the next state creating a mechanism of self-controled state:
 
     protected void op() {
-    		try {
-    			//dequeue
-    			ItemState is0 = new ItemState(firstQueue.take());
-    			System.out.println("Item " + is0.getItem().getValue() + ": " + is0.getState().getValue());
-                //process here
-    			//enqueue
-    			ItemState is1 = new ItemState(is0);
-    			secondQueue.add(is1);
-    			System.out.println("Item " + is1.getItem().getValue() + ": " + is1.getState().getValue());
-    		} catch (InterruptedException e) {
-    			e.printStackTrace();
-    		}
-    	}
+        try {
+            //dequeue
+            ItemState is0 = new ItemState(firstQueue.take());
+            System.out.println("Item " + is0.getItem().getValue() + ": " + is0.getState().getValue());
+            //process here
+            //enqueue
+            ItemState is1 = new ItemState(is0);
+            secondQueue.add(is1);
+            System.out.println("Item " + is1.getItem().getValue() + ": " + is1.getState().getValue());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 With ItemState implemetation:
 
@@ -100,6 +100,5 @@ Results:
     Item 2: IN_SECOND
     ... others
 
-More details in code: https://github.com/ag-studies/stackoverflow-queue
 
   [1]: https://i.stack.imgur.com/llHwvl.png
