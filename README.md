@@ -46,7 +46,7 @@ Each task runs the operations ```op()``` of according with below affirmation on 
 
 ```ItemState``` is a immutable object that contains ```Item``` and your ```State```. This ensures consistency between Item and State values.
 
-ItemState has knowlegment about the next state creating a mechanism of self-controled state:
+ItemState has acknowledgement about the next state creating a mechanism of self-controled state:
 
     protected void op() {
         try {
@@ -83,7 +83,7 @@ With ItemState implemetation:
     }
 
 So this way is possible build solutions more elegant, flexible and scalable.
-Scalable because you can to control more states only change ```next()``` and moving task can be generalized.
+Scalable because you can to control more states only changing ```next()``` and generalizing the moving task for increase the number of queue.
 
 Results:
 
