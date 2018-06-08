@@ -1,21 +1,30 @@
 package stackoverflow.task;
 
 public abstract class AbstractRunnable implements Runnable {
+	protected int delay_time = 100;
 	
-	private void delay(){
+	protected void delay(int d){
 		try {
-			Thread.sleep(10);
+			Thread.sleep(d);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
+		}		
 	}
 	
-	protected abstract void op();
+	private void delay(){
+		delay(delay_time);
+	}
+	
+	protected abstract void op() throws InterruptedException;
 	
 	public void run() {
-		while(true){
-			op();
-			delay();
-		}
+		try {
+			while(true){
+				op();
+				delay();
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}	
 	}
 }

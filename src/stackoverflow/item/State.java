@@ -3,7 +3,7 @@ package stackoverflow.item;
 import stackoverflow.item.state.States;
 
 public class State {
-	final private int value;
+	private final int value;
 	
 	private State(int v){
 		this.value = v;
